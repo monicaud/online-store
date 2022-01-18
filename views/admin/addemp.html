@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Employee Sign-Up</title>
+    <script>
+        const getData = () => {
+            const formData = {};
+            document.querySelectorAll('input').forEach(input => {
+                formData[input.id] = input.value;
+            });
+            console.log(formData);
+            return formData;
+        }
+
+        const addEmp = async () => {
+
+            console.log(JSON.stringify(getData()));
+            
+            alert("Employee was added successfully!");
+
+            await fetch('/api/admin/addEmp', {//need to edit the fetch route...
+                method: 'POST', 
+                body: JSON.stringify(getData()),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            location.href = "dashboard.html"
+        }
+    </script>
+</head>
+
+<body>
+    <h2> Add Employee</h2>
+
+    <form>
+        <label>Full Name</label><input type="text" id="name" name="name" required/><br/>
+        <label>Email</label><input type="text" id="email" name="email" required/><br/>
+        <label>Password</label><input type="text" id="pass" name="password" required ><br/>
+        <button type="button" onclick="addEmp()">Add </button>
+    </form>
+   
+</body>
+</html>
+
