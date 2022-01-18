@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>User Login</title>
+    <script>
+        const getData = () => {
+            var userid = parseInt(document.getElementById("userid").value);
+            var pass = document.getElementById("pass").value;
+            var obj = {userid:userid,pass:pass}
+            return obj;
+        }
+
+        const checkUser = async ()=> {
+            var data = await fetch('/api/user/userLogin', {
+                method: 'POST',
+                body: JSON.stringify(getData()),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            return data.json();
+        }
+
+        const getUserLogin = async()=>{
+            console.log("in get user login");
+            var user = await checkUser();
+            console.log(user);
+            if(user != null){
+                sessionStorage.setItem("userid",user._id);
+                location.href = "dashboard.html"
+            }
+            else{
+                alert("User Not Found!!!! Please try logging in again.");
+                console.log("User Not Found!!!!")
+                location.reload();
+            }
+            console.log(emp);
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;">Sign-In</h2>
+    <div id="container" style="margin-left: 40%;">
+        <form id="userLogin">
+            <label>User Name </label>
+            <input type="text" name="userid" id="userid"/><br/>
+
+            <label>Password </label>
+            <input type="password" name="pass" id="pass"/><br/>
+
+            <input type="button" value="Login" onclick="getUserLogin()" /> <!--empLogin.js-->
+            <input type="reset" value="Reset"/>
+        </form>
+    </div>
+</body>
+</html>

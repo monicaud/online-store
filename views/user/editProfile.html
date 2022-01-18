@@ -1,0 +1,33 @@
+<!--Mia Pranckus Learner 4-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Edit Profile</title>
+    <script src="editProfile.js"></script>
+</head>
+<body onload="loadData()">
+        <!--onload, the form is prefilled with that user's information "value=databaseParameter"-->
+        <!--Then the user just changes whatever information they need to-->
+        <!--"Update" will update the database with the new user information-->
+        <!--having this inside form tags changes the url-->
+    <div id="forms">
+    <form>
+        <label>Name</label>
+        <input type="text" name="name" id="name" class="inputfield" value="Prefilled Message"/><br/><br/>
+
+        <label>Email</label>
+        <input type="text" name="email" id="email" class="inputfield" value="Prefilled Message #2"/><br/><br/>
+
+        <label>Password</label>
+        <input type="password" name="password" id="password" class="inputfield" value="Prefilled #3"/><br/><br/>
+
+        <button type="button" onclick="updateUserInfo()">Update</button>
+    </form>
+    </div>
+</body>
+</html>

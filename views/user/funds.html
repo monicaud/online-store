@@ -1,0 +1,21 @@
+<!--Mia Pranckus L4-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Funds</title>
+    <script src="funds.js"></script>
+</head>
+<body onload="showFunds()">
+    <h3>Add Funds</h3>
+    <label>Amount</label>
+    <input type="number" id="amount" name="amount" class="inputfield"/>
+    <input type="submit" id="add" value="Add" onclick="addFunds()"/> 
+    <div id="currentFunds"></div>
+</body>
+</html>

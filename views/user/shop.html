@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="shop.js" defer></script>
+    <script src="dashboard.js" defer></script>
+    <style>
+        .card-img-top{
+            object-fit:cover; /* Do not scale the image */
+            object-position: center ; /* Center the image within the element */
+            width: 100%;
+            margin: auto;
+            max-height: 200px;
+            min-height: 150px;
+        }
+        #products{
+            width: 90%;
+            margin: auto;
+            
+        }
+        .shopitem{
+            height: 80%;
+        }
+    </style>
+</head>
+<body onload="showProducts()">
+    
+    <h1 style="text-align: center;"><u>Shop</u></h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col" style="text-align: left;" id="cart-size">
+                Cart Size: 0
+            </div>
+            <div class="col" style="text-align: right;">
+                <button type="button" onclick="saveCartItems();">Verify Cart</button>
+            </div>
+        </div>
+    </div>
+    <div id="products">
+    </div>  
+</body>
+</html>
