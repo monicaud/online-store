@@ -1,0 +1,28 @@
+{
+  "name": "tcs-capstone",
+  "version": "1.0.0",
+  "description": "TO BE EDITED...",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap-icons": "^1.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TCS-Capstone-4/capstone-4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TCS-Capstone-4/capstone-4/issues"
+  },
+  "homepage": "https://github.com/TCS-Capstone-4/capstone-4#readme"
+}
